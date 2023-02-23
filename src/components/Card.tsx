@@ -10,13 +10,11 @@ export const Card = ({
 }: IProduct) => {
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow ">
-      <a href="/">
-        <img
-          className="rounded-t-lg object-cover h-96"
-          src={images[0]}
-          alt=""
-        />
-      </a>
+      <img
+        className="rounded-t-lg object-contain h-80 w-full"
+        src={images[0]}
+        alt=""
+      />
       <div className="p-5 flex flex-col justify-between">
         <a href="/">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
