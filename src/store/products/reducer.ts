@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import {
   FETCH_PRODUCT_FAILURE,
   FETCH_PRODUCT_REQUEST,
@@ -12,7 +13,6 @@ const initialState: ProductState = {
   error: null,
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action: ProductsActions) => {
   switch (action.type) {
     case FETCH_PRODUCT_REQUEST:

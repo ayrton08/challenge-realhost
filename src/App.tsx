@@ -20,8 +20,6 @@ const App = () => {
     dispatch(fetchProductRequest());
   }, [dispatch]);
 
-  console.log('soy los products', products);
-
   return (
     <div className="grid place-content-center min-h-screen bg-gray-200">
       {pending ? (
@@ -32,11 +30,14 @@ const App = () => {
       ) : error ? (
         <div>Error</div>
       ) : (
-        <div className="p-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5 ">
-          {products.map((product) => (
-            <Card key={product.id} {...product} />
-          ))}
-        </div>
+        <>
+          <h1 className='text-3xl font-bold pt-5'>Products</h1>
+          <div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {products.map((product) => (
+              <Card key={product.id} {...product} />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
