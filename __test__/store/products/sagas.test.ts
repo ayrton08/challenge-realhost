@@ -1,11 +1,13 @@
 import { getProducts } from '../../../src/store/products/sagas';
 
-describe('getProducts', () => {
-  test('should first', async () => {
-    const products = await getProducts();
+jest.setTimeout(10000);
 
-    expect(typeof products.data.products).toEqual([]);
-    console.log(products.data.products);
-    // expect(getProducts).toBeCalledTimes(1);
+describe('getProducts()', () => {
+  test('should yield the products data', async () => {
+    const { data } = await getProducts();
+
+    expect(data.products.length).toBe(30);
+
+    expect(typeof data.products).toEqual('object');
   });
 });
